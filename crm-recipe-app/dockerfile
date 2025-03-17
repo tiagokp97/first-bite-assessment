@@ -1,0 +1,21 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copia os arquivos de dependência e instala
+COPY package*.json ./
+RUN npm install
+
+# Copia o restante do código
+COPY . .
+
+# Gera o build e lista o conteúdo do diretório /app
+RUN npm run build && ls -la /app
+
+# Instala o serve globalmente para servir os arquivos estáticos
+RUN npm install -g serve
+
+EXPOSE 3000
+
+# Serve o conteúdo da pasta 'dist'
+CMD ["sh", "-c", "ls -la dist && serve -s dist -l 5173"]

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node16",
+    "module": "NodeNext",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "skipLibCheck": true,
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "strict": false
+  }
+}
